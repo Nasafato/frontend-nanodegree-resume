@@ -37,3 +37,9 @@ How do the diagrams help you visualize the branch structure?
    changes/commits will be lost if you move to a part of the branch that is
    before the point at which you started to branch off but didn't create a new
    branch for those changes.
+
+What is the result of merging two branches together? Why do we represent it in
+the diagram the way we do?
+
+   Merging them together incorporates wanted changes made to the original parent
+   file along both branches, and merges them back into the master branch.
