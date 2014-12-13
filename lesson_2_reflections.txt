@@ -12,3 +12,10 @@ What value do you think it offers?
    The staging area is the intermediate area between the two: files from the
    working directory that you care about track are put into the staging area, 
    where you can then commit the changes you make to the repository.
+
+How can you use the staging area to make sure you have one commit per logical
+change?
+   
+   You can add files to the staging area that are part of the logical change.
+   Then you can compare that modified file to the last commit and see if the
+   changes are logical.
