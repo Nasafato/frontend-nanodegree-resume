@@ -1,0 +1,5 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+   It creates a .git folder that stores metadata on all the files and folders 
+   inside the directory that the .git folder is located in. From there, every 
+   time you make a commit or a change, data on that file is stored in .git. 
