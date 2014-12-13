@@ -19,3 +19,21 @@ change?
    You can add files to the staging area that are part of the logical change.
    Then you can compare that modified file to the last commit and see if the
    changes are logical.
+
+What are some situations when branches would be helpful in keeping your history
+organized? How would branches help?
+
+   Using branches, you can create multiple different "pathways" of development.
+   They can be experimental, or they can have the purpose of modifying the 
+   original working directory so that it serves a different function. Also, you
+   can then checkout to these various branches to work on features specific to
+   the purpose you want to achieve with these branches that don't overlap with
+   your other branches. 
+
+How do the diagrams help you visualize the branch structure?
+
+   Checking out moves you to a different part of the branch, or to a different
+   branch altogether. If things haven't solidified to a branch yet, then those
+   changes/commits will be lost if you move to a part of the branch that is
+   before the point at which you started to branch off but didn't create a new
+   branch for those changes.
