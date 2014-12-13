@@ -43,3 +43,15 @@ the diagram the way we do?
 
    Merging them together incorporates wanted changes made to the original parent
    file along both branches, and merges them back into the master branch.
+
+What are the pros and cons of Git's automatic merging vs. always doing merges
+manually?
+
+   Automatic merging saves you time when you're merging branches, but there is
+   potential for the automatic merge to not be good or to have errors. Manual
+   merging is tedious and may not always be necessary, but it helps you identify
+   potential conflicts in the merge. 
+
+
+
+
