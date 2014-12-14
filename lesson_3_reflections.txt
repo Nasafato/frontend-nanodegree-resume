@@ -1,6 +1,16 @@
 When would you want to use a remote repository rather than keeping all your work local?
 
-  If I am collaborating with other people on a project, or I want my work on a project to be accessible by
-  other people, then it would very beneficial to have my work online. This enables easy accessibility and
-  teamwork, and is much easier than copying and sending individual files through email or whatever you'd use
-  otherwise.
+  If I am collaborating with other people on a project, or I want my work on a 
+  project to be accessible by other people, then it would very beneficial to 
+  have my work online. This enables easy accessibility and teamwork, and is much 
+  easier than copying and sending individual files through email or whatever 
+  you'd use otherwise.
+
+Why might you want to always pull changes manually rather than having Git 
+automatically stay up-to-date with your remote repository?
+
+   Other people may have pushed changes to the remote, while you may be working
+   on things unrelated to those, or doing the same things in different ways, and
+   it would definitely not be a good idea for other people's changes to be 
+   automatically be pulled to your local repo. 
+
