@@ -1,0 +1,6 @@
+When would you want to use a remote repository rather than keeping all your work local?
+
+  If I am collaborating with other people on a project, or I want my work on a project to be accessible by
+  other people, then it would very beneficial to have my work online. This enables easy accessibility and
+  teamwork, and is much easier than copying and sending individual files through email or whatever you'd use
+  otherwise.
