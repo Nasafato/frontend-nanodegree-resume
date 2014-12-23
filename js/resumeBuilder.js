@@ -1,3 +1,103 @@
+var psinsights = {
+ "kind": "pagespeedonline#result",
+ "id": "/speed/pagespeed",
+ "responseCode": 200,
+ "title": "PageSpeed Home",
+ "score": 90,
+ "pageStats": {
+  "numberResources": 22,
+  "numberHosts": 7,
+  "totalRequestBytes": "2761",
+  "numberStaticResources": 16,
+  "htmlResponseBytes": "91981",
+  "cssResponseBytes": "37728",
+  "imageResponseBytes": "13909",
+  "javascriptResponseBytes": "247214",
+  "otherResponseBytes": "8804",
+  "numberJsResources": 6,
+  "numberCssResources": 2
+ },
+ "formattedResults": {
+  "locale": "en_US",
+  "ruleResults": {
+    "AvoidBadRequests": {
+      "localizedRuleName": "Avoid bad requests",
+      "ruleImpact": 0.0
+    },
+    "MinifyJavaScript": {
+      "localizedRuleName": "Minify JavaScript",
+      "ruleImpact": 0.1417,
+      "urlBlocks": [
+      {
+        "header": {
+       "format": "Minifying the following JavaScript resources could reduce their size by $1 ($2% reduction).",
+       "args": [
+        {
+         "type": "BYTES",
+         "value": "1.3KiB"
+        },
+        {
+         "type": "INT_LITERAL",
+         "value": "0"
+        }
+       ]
+        },
+        "urls": [
+        {
+          "result": {
+         "format": "Minifying $1 could save $2 ($3% reduction).",
+         "args": [
+          {
+           "type": "URL",
+           "value": "http://code.google.com/js/codesite_tail.pack.04102009.js"
+          },
+          {
+           "type": "BYTES",
+           "value": "717B"
+          },
+          {
+           "type": "INT_LITERAL",
+           "value": "1"
+          }
+         ]
+        }
+       },
+       {
+        "result": {
+         "format": "Minifying $1 could save $2 ($3% reduction).",
+         "args": [
+          {
+           "type": "URL",
+           "value": "http://www.gmodules.com/ig/proxy?url\u003dhttp%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2Fjquery-1.2.6.min.js"
+          },
+          {
+           "type": "BYTES",
+           "value": "258B"
+          },
+          {
+           "type": "INT_LITERAL",
+           "value": "0"
+          }
+         ]
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "SpriteImages": {
+    "localizedRuleName": "Combine images into CSS sprites",
+    "ruleImpact": 0.0
+   }
+  }
+ },
+ "version": {
+  "major": 1,
+  "minor": 11
+ }
+};
+
+
 var bio = {
     "name": "Alan Gou",
     "role": "Programmer",
@@ -143,4 +243,154 @@ function inName(twoNames){
 }
 
 $("#mapDiv").append(googleMap);
+
+var outsideExample = "First string";
+if (true) {
+    var outsideExample = "Second string";
+    console.log(outsideExample);
+}
+console.log(outsideExample);
+
+
+function getRelationship(x, y){
+   if (isNumber(x) && isNumber(y)){
+      return outputRelation(x,y);
+   }else{
+      return outputError(x,y);
+   }   
+}
+
+function isNumber(element){
+   if(typeof element === 'number' && !isNaN(element)){
+      return true;
+   }else{
+      return false;
+   }
+}
+
+function outputRelation(x, y){
+   if(x > y){
+      return ">";
+   }else if(x < y){
+      return "<";
+   }else{
+      return "=";
+   }
+}
+
+function outputError(x, y){
+   if(!isNumber(x) && !isNumber(y)){
+      return "Can't compare relationships because "+x+" and "+y+" are not numbers.";
+   }else if(!isNumber(x)){
+      return "Can't compare relationships because "+x+" is not a number.";
+   }else{
+      return "Can't compare relationships because "+y+" is not a number.";
+   }
+}
+
+console.log(getRelationship(1,4));
+console.log(getRelationship(1,1));
+console.log(getRelationship("that",2));
+console.log(getRelationship("this"," something else"));
+console.log(getRelationship(3));
+console.log(getRelationship("hi"));
+console.log(getRelationship(NaN));
+console.log(getRelationship(NaN, undefined));
+
+var moonWalkers = [
+  "Neil Armstrong",
+  "Buzz Aldrin",
+  "Pete Conrad",
+  "Alan Bean",
+  "Alan Shepard",
+  "Edgar Mitchell",
+  "David Scott",
+  "James Irwin",
+  "John Young",
+  "Charles Duke",
+  "Eugene Cernan",
+  "Harrison Schmitt"
+];
+
+function alphabetizer(_names){
+   var alphabetical_names = [];
+   for(var i = 0; i < _names.length; i++){
+      alphabetical_names.push(reverseNames(_names[i]));
+   } 
+   alphabetical_names = alphabetical_sort(alphabetical_names);
+   return alphabetical_names;
+}
+
+function reverseNames(firstNameLastName){
+   var splitNames = firstNameLastName.split(" ");
+   return splitNames[1] + ', ' + splitNames[0];
+}
+
+function alphabetical_sort(listOfNames){
+   var sortedArray = [];
+   for(var i = 0; i < listOfNames.length; i++){
+      sortedArray = insert(sortedArray, listOfNames[i]);
+   }
+   return sortedArray;
+}
+
+function insert(sortedArray, name){
+   var nameInserted = false;
+   for(var i = 0; i < sortedArray.length; i++){
+      if(name < sortedArray[i]){
+         //inserts name at index i and shifts elements right to make room
+         sortedArray.splice(i, 0, name); 
+         nameInserted = true;
+         break;
+      }
+   }
+   if(!nameInserted){
+      sortedArray.push(name);
+   }
+   return sortedArray;
+}
+// Try logging your results to test your code!
+console.log(alphabetizer(moonWalkers));
+//console.log(alphabetizer(moonWalkers));
+
+function totalBytes(psiResults){
+   var numBytes = 0;
+   for(var stat in psiResults.pageStats){ 
+      if(stat.indexOf("Bytes") > -1){ //checks if pageStats entry has word "Bytes"
+         numBytes += parseInt(psiResults.pageStats[stat],10);
+      }
+   }
+   return numBytes;
+}
+
+function ruleList(psiResults){
+   var listOfRules = [];
+   var ruleResults = psiResults.formattedResults.ruleResults;
+   for(var rule in ruleResults){
+      listOfRules.push(ruleResults[rule].localizedRuleName);
+   }
+   return listOfRules;
+}
+
+console.log(totalBytes(psinsights));
+console.log(ruleList(psinsights));
+
+h1 = articleList.siblings('h1');
+
+kids = articleList.children();
+kids = articleList.find('*');
+
+parents = articleList.parents('div');
+
+parent = articleList.parent();
+
+
+$('p').each(function(){
+   var text = $(this).text;
+   var wordCount = 0;
+   var words = text.split(' ');
+   var wordCount = words.length;
+   $(this).text(text+wordCount);
+});
+
 
