@@ -1,0 +1,4 @@
+http://stackoverflow.com/questions/5060923/how-to-stretch-html-css-horizontal-navigation-items-evenly-and-fully-across-a
+http://www.sitepoint.com/responsive-fluid-width-variable-item-navigation-css/
+http://www.htmlgoodies.com/tutorials/getting_started/article.php/3479511
+http://stackoverflow.com/questions/9370022/evenly-spread-links-over-a-horizontal-navigation

@@ -120,23 +120,71 @@ a {
 }
 
 .flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
 }
 
+#role {
+  color: #FFFFFF;
+}
+
+#topContacts{
+  display: table;
+  width: 100%;
+}
+
+#topContacts li{
+  display: table-cell;
+}
+
+#footerContacts{
+  display: table;
+  width: 100%;
+}
+
+#footerContacts li{
+  display: table-cell;
+}
+
+#skill {
+  display: block;
+}
+
 .center-content {
   padding-top: 2.5%;
-  padding-left: 5%;
+  padding-left: 5%; 
   padding-right: 5%;
   padding-bottom: 2.5%
 }
 
 ul {
   list-style-type: none;
+}
+
+nav {
+  padding-bottom: 10px;
+  background-color: #333333;
+  width: 100%;
+}
+
+nav ul {
+  overflow: hidden;
+}
+
+nav ul li {
+  list-style: none;
+  float: left;
+  text-align: center;
+  width: 33.3333%;
+  width: calc(100% / 3);
+}
+
+nav ul li a {
+  font-weight: bold;
+  font-size: 20px;
+  color: #F5AE23;
 }
 
 .biopic {
